@@ -5,11 +5,11 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\PrintController;
 use App\Http\Controllers\Admin\LetterController;
-use App\Http\Controllers\Admin\LetterOutController;
 use App\Http\Controllers\Admin\SenderController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DepartmentController;
+use App\Http\Controllers\Admin\LetteroutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +22,10 @@ use App\Http\Controllers\Admin\DepartmentController;
 |
 */
 
-Route::get('/', [LoginController::class, 'index']);
+Route::get('/', function(){
+    return view('welcome');
+});
+Route::get('/logins', [LoginController::class, 'index']);
 
 // Authentication
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -31,39 +34,39 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 //Admin
 Route::prefix('admin')
-        ->middleware('auth')
-        ->group(function(){
-            Route::get('/dashboard',[DashboardController::class, 'index'])->name('admin-dashboard');
-            Route::resource('/department', DepartmentController::class);
-            Route::resource('/sender', SenderController::class);
-            Route::resource('/letter', LetterController::class, [
-			    'except' => [ 'show' ]
-		    ]);
-            // baru
-             Route::resource('/letterOut', LetterOutController::class, [
-			    'except' => [ 'show' ]
-		    ]);
-            Route::get('letterOut/surat-masuk', [LetterController::class, 'incoming_mail'])->name('surat-masuk');
-            Route::get('letterOut/surat-keluar', [LetterController::class, 'outgoing_mail'])->name('surat-keluar');
+    ->middleware('auth')
+    ->group(function () {
+        Route::get('/dashboard', [DashboardController::class, 'index'])->name('admin-dashboard');
+        Route::resource('/department', DepartmentController::class);
+        Route::resource('/sender', SenderController::class);
+        // 
 
-            Route::get('letterOut/surat/{id}', [LetterController::class, 'show'])->name('detail-surat');
-            Route::get('letterOut/download/{id}', [LetterController::class, 'download_letter'])->name('download-surat');
-            // endbaru
-            Route::get('letter/surat-masuk', [LetterController::class, 'incoming_mail'])->name('surat-masuk');
-            Route::get('letter/surat-keluar', [LetterController::class, 'outgoing_mail'])->name('surat-keluar');
+        Route::resource('/letter', LetterController::class, [
+            'except' => ['show']
+        ]);
+        Route::resource('/letterout', LetteroutController::class, [
+            'except' => ['show']
+        ]);
 
-            Route::get('letter/surat/{id}', [LetterController::class, 'show'])->name('detail-surat');
-            Route::get('letter/download/{id}', [LetterController::class, 'download_letter'])->name('download-surat');
+        Route::get('letter/surat-masuk', [LetterController::class, 'incoming_mail'])->name('surat-masuk');
+        Route::get('letterout/surat-keluar', [LetteroutController::class, 'outgoing_mail'])->name('surat-keluar');
 
-            //print
-            Route::get('print/surat-masuk', [PrintController::class, 'index'])->name('print-surat-masuk');
-            Route::get('print/surat-keluar', [PrintController::class, 'outgoing'])->name('print-surat-keluar');
+        Route::get('letterout/surat/{id}', [LetteroutController::class, 'show'])->name('detail-surat-keluar');
+        Route::get('letterout/download/{id}', [LetteroutController::class, 'download_letter'])->name('download-surat-keluar');
 
-            Route::resource('user', UserController::class);
-            Route::resource('setting', SettingController::class, [
-			    'except' => [ 'show' ]
-		    ]);
-            Route::get('setting/password',[SettingController::class, 'change_password'])->name('change-password');
-            Route::post('setting/upload-profile', [SettingController::class, 'upload_profile'])->name('profile-upload');
-            Route::post('change-password', [SettingController::class, 'update_password'])->name('update.password');
-        });
+        // 
+        Route::get('letter/surat/{id}', [LetterController::class, 'show'])->name('detail-surat');
+        Route::get('letter/download/{id}', [LetterController::class, 'download_letter'])->name('download-surat');
+
+        //print
+        Route::get('print/surat-masuk', [PrintController::class, 'index'])->name('print-surat-masuk');
+        Route::get('print/surat-keluar', [PrintController::class, 'outgoing'])->name('print-surat-keluar');
+
+        Route::resource('user', UserController::class);
+        Route::resource('setting', SettingController::class, [
+            'except' => ['show']
+        ]);
+        Route::get('setting/password', [SettingController::class, 'change_password'])->name('change-password');
+        Route::post('setting/upload-profile', [SettingController::class, 'upload_profile'])->name('profile-upload');
+        Route::post('change-password', [SettingController::class, 'update_password'])->name('update.password');
+    });

@@ -213,4 +213,8 @@ class LetterController extends Controller
                     ->route($redirect)
                     ->with('success', 'Sukses! 1 Data Berhasil Dihapus');
     }
+    public function cobaCetak()
+    {
+        return view('pages.admin.letter.cetak-disposisi');
+    }
 }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Letter;
+use App\Models\Letterout;
 
 class PrintController extends Controller
 {
@@ -20,9 +21,9 @@ class PrintController extends Controller
 
     public function outgoing()
     {
-        $item = Letter::with(['department','sender'])->where('letter_type', 'Surat Keluar')->latest()->get();
+        $item = Letterout::latest()->get();
 
-        return view('pages.admin.letter.print-outgoing',[
+        return view('pages.admin.letterout.print-outgoing',[
             'item' => $item
         ]);
     }

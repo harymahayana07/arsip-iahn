@@ -7,14 +7,15 @@
     <!-- * * Tip * * You can use text or an image for your navbar brand.-->
     <!-- * * * * * * When using an image, we recommend the SVG format.-->
     <!-- * * * * * * Dimensions: Maximum height: 32px, maximum width: 240px-->
+    <img class="img-fluid" src="/admin/assets/img/iahn.jpeg" style="max-width: 3rem;margin-left: 5px;" />
     <a class="navbar-brand pe-3 ps-4 ps-lg-2" href="{{ route('admin-dashboard') }}">
-        E-Arsip IAHN
+        E-ARSIP IAHN
     </a>
     <!-- Navbar Search Input-->
     <!-- * * Note: * * Visible only on and above the lg breakpoint-->
     <form class="form-inline me-auto d-none d-lg-block me-3">
         <div class="input-group input-group-joined input-group-solid">
-            
+
         </div>
     </form>
     <!-- Navbar Items-->
@@ -26,17 +27,17 @@
         <li class="nav-item dropdown no-caret dropdown-user me-3 me-lg-4">
             <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 @if (Auth::user()->profile != NULL)
-                    <img class="img-fluid" src="{{ Storage::url(Auth::user()->profile) }}" />
+                <img class="img-fluid" src="{{ Storage::url(Auth::user()->profile) }}" />
                 @else
-                    <img class="img-fluid" src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" />
+                <img class="img-fluid" src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" />
                 @endif
             </a>
             <div class="dropdown-menu dropdown-menu-end border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                 <h6 class="dropdown-header d-flex align-items-center">
                     @if (Auth::user()->profile != NULL)
-                        <img class="dropdown-user-img" src="{{ Storage::url(Auth::user()->profile) }}" />
+                    <img class="dropdown-user-img" src="{{ Storage::url(Auth::user()->profile) }}" />
                     @else
-                        <img class="dropdown-user-img" src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" />
+                    <img class="dropdown-user-img" src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}" />
                     @endif
 
                     <div class="dropdown-user-details">

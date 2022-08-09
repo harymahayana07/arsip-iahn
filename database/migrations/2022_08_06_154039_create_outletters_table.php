@@ -16,11 +16,9 @@ class CreateOutlettersTable extends Migration
         Schema::create('letterouts', function (Blueprint $table) {
             $table->id();
             $table->string('letter_no');
-            $table->date('letter_date');
+            $table->date('letterout_date');
             $table->string('regarding');
             $table->string('purpose');
-            $table->foreignId('department_id');
-            $table->foreignId('sender_id');
             $table->string('letter_file');
             $table->string('letter_type');
             $table->timestamps();

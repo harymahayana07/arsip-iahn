@@ -8,30 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Letterout extends Model
 {
     use HasFactory;
-
-    protected $table = "";
+   
     protected $fillable = [
         'letter_no',
-        'letter_date',
-        'date_received',
+        'letterout_date',
         'regarding',
-        'department_id',
-        'sender_id',
+        'purpose',
         'letter_file',
         'letter_type'
     ];
 
-    protected $hidden = [
-
-    ];
-
-    public function department()
-    {
-        return $this->belongsTo(Department::class, 'department_id','id');
-    }
-
-    public function sender()
-    {
-        return $this->belongsTo(Sender::class, 'sender_id','id');
-    }
+    protected $hidden = [];
+  
 }

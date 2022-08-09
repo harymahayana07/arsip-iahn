@@ -13,7 +13,7 @@ Tambah Surat
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="file-text"></i></div>
-                            Tambah Surat
+                            Tambah Surat Masuk
                         </h1>
                     </div>
                 </div>
@@ -43,9 +43,7 @@ Tambah Surat
                                 <label for="letter_type" class="col-sm-3 col-form-label">Jenis Surat</label>
                                 <div class="col-sm-9">
                                     <select name="letter_type" class="form-control" required>
-                                        <option value="">Pilih..</option>
                                         <option value="Surat Masuk" {{ (old('letter_type') == 'Surat Masuk')? 'selected':''; }}>Surat Masuk</option>
-                                        <option value="Surat Keluar" {{ (old('letter_type') == 'Surat Keluar')? 'selected':''; }}>Surat Keluar</option>
                                     </select>
                                 </div>
                                 @error('letter_type')
@@ -109,7 +107,7 @@ Tambah Surat
                                 </div>
                                 @enderror
                             </div>
-                            <div class="mb-3 row">
+                            <!-- <div class="mb-3 row">
                                 <label for="disposisi" class="col-sm-3 col-form-label">Tujuan Disposisi</label>
                                 <div class="col-sm-9">
                                     <input type="text" class="form-control @error('disposisi') is-invalid @enderror" value="{{ old('disposisi') }}" name="disposisi" placeholder="Tujuan Disposisi.." required>
@@ -119,7 +117,34 @@ Tambah Surat
                                     {{ $message; }}
                                 </div>
                                 @enderror
+                            </div> -->
+                            <!-- tujuan disposisi -->
+                            <div class="mb-3 row">
+                                <label for="disposisi" class="col-sm-3 col-form-label">Tujuan Disposisi</label>
+                                <div class="col-sm-9">
+                                    <select name="disposisi" class="form-control selectx" required>
+                                        <option value="">Pilih..</option>
+                                        <option value="WAKIL REKTOR I">WAKIL REKTOR I</option>
+                                        <option value="WAKIL REKTOR II">WAKIL REKTOR II</option>
+                                        <option value="KEPALA BIRO">KEPALA BIRO</option>
+                                        <option value="KABAG">KABAG</option>
+                                        <option value="KASUBBAG">KASUBBAG</option>
+                                        <option value="DIREKTUR">DIREKTUR</option>
+                                        <option value="DEKAN FAKULTAS">DEKAN FAKULTAS</option>
+                                        <option value="KETUA JURUSAN">KETUA JURUSAN</option>
+                                        <option value="KOORDINATOR PRODI">KOORDINATOR PRODI</option>
+                                        <option value="KETUA LEMBAGA">KETUA LEMBAGA</option>
+                                        <option value="KEPALA UNIT">KEPALA UNIT</option>
+                                        <option value="KEPALA LAB">KEPALA LAB</option>
+                                    </select>
+                                </div>
+                                @error('disposisi')
+                                <div class="invalid-feedback">
+                                    {{ $message; }}
+                                </div>
+                                @enderror
                             </div>
+                            <!--  -->
                             <div class="mb-3 row">
                                 <label for="department_id" class="col-sm-3 col-form-label">Departemen</label>
                                 <div class="col-sm-9">
