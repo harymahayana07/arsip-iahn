@@ -36,8 +36,8 @@
                 <div class="nav-link-icon"><i data-feather="user"></i></div>
                 Data User
             </a>
-            <a class="nav-link {{ (request()->is('admin/user*')) ? 'active' : '' }}" href="{{ route('user.index') }}">
-                <div class="nav-link-icon"><i data-feather="user"></i></div>
+            <a class="nav-link {{ (request()->is('admin/disposisi/surat-disposisi')) ? 'active' : '' }}" href="{{ route('surat-disposisi') }}">
+                <div class="nav-link-icon"><i data-feather="mail"></i></div>
                 Pengajuan Disposisi
             </a>
             <a class="nav-link {{ (request()->is('admin/setting*')) ? 'active' : '' }}" href="{{ route('setting.index') }}">

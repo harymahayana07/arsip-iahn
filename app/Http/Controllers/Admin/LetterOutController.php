@@ -124,10 +124,7 @@ class LetteroutController extends Controller
         if ($request->file('letter_file')) {
             $validatedData['letter_file'] = $request->file('letter_file')->store('assets/letter-file');
         }
-
-        if ($validatedData['letter_type'] == 'Surat Keluar') {
             $redirect = 'surat-keluar';
-        } 
 
         $item->update($validatedData);
 

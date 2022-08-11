@@ -16,6 +16,12 @@ Tambah Surat
                             Tambah Surat Masuk
                         </h1>
                     </div>
+                    <div class="col-12 col-xl-auto mb-3">
+                        <a class="btn btn-sm btn-light text-primary" href="{{ route('user.index') }}">
+                            <i class="me-1" data-feather="arrow-left"></i>
+                            Kembali ke Semua Disposisi
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,7 +134,7 @@ Tambah Surat
                                         <option value="WAKIL REKTOR II">WAKIL REKTOR II</option>
                                         <option value="KEPALA BIRO">KEPALA BIRO</option>
                                         <option value="KABAG">KABAG</option>
-                                        <option value="KASUBBAG">KASUBBAG</option>
+                                        <option value="KASUBBAG TU">KASUBBAG</option>
                                         <option value="DIREKTUR">DIREKTUR</option>
                                         <option value="DEKAN FAKULTAS">DEKAN FAKULTAS</option>
                                         <option value="KETUA JURUSAN">KETUA JURUSAN</option>

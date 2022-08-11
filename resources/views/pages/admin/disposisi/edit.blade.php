@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Ubah Surat Keluar
+Ubah Surat
 @endsection
 
 @section('container')
@@ -13,7 +13,7 @@ Ubah Surat Keluar
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="file-text"></i></div>
-                            Ubah Surat Keluar
+                            Ubah Surat
                         </h1>
                     </div>
                     <div class="col-12 col-xl-auto mb-3">
@@ -50,6 +50,8 @@ Ubah Surat Keluar
                                 <label for="letter_type" class="col-sm-3 col-form-label">Jenis Surat</label>
                                 <div class="col-sm-9">
                                     <select name="letter_type" class="form-control" required>
+                                        <option value="">Pilih..</option>
+                                        <option value="Surat Masuk" {{ ($item->letter_type == 'Surat Masuk')? 'selected':''; }}>Surat Masuk</option>
                                         <option value="Surat Keluar" {{ ($item->letter_type == 'Surat Keluar')? 'selected':''; }}>Surat Keluar</option>
                                     </select>
                                 </div>
@@ -71,17 +73,27 @@ Ubah Surat Keluar
                                 @enderror
                             </div>
                             <div class="mb-3 row">
-                                <label for="letterout_date" class="col-sm-3 col-form-label">Tanggal Surat</label>
+                                <label for="letter_date" class="col-sm-3 col-form-label">Tanggal Surat</label>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control @error('letterout_date') is-invalid @enderror" value="{{ $item->letterout_date }}" name="letterout_date" required>
+                                    <input type="date" class="form-control @error('letter_date') is-invalid @enderror" value="{{ $item->letter_date }}" name="letter_date" required>
                                 </div>
-                                @error('letterout_date')
+                                @error('letter_date')
                                 <div class="invalid-feedback">
                                     {{ $message; }}
                                 </div>
                                 @enderror
                             </div>
-
+                            <div class="mb-3 row">
+                                <label for="date_received" class="col-sm-3 col-form-label">Tanggal Diterima</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control @error('date_received') is-invalid @enderror" value="{{ $item->date_received }}" name="date_received" required>
+                                </div>
+                                @error('date_received')
+                                <div class="invalid-feedback">
+                                    {{ $message; }}
+                                </div>
+                                @enderror
+                            </div>
                             <div class="mb-3 row">
                                 <label for="regarding" class="col-sm-3 col-form-label">Perihal</label>
                                 <div class="col-sm-9">
@@ -94,17 +106,37 @@ Ubah Surat Keluar
                                 @enderror
                             </div>
                             <div class="mb-3 row">
-                                <label for="purpose" class="col-sm-3 col-form-label">Tujuan</label>
+                                <label for="department_id" class="col-sm-3 col-form-label">Departemen</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control @error('purpose') is-invalid @enderror" value="{{ $item->purpose }}" name="purpose" placeholder="Tujuan.." required>
+                                    <select name="department_id" class="form-control selectx" required>
+                                        <option value="">Pilih..</option>
+                                        @foreach ($departments as $department)
+                                        <option value="{{ $department->id }}" {{ ($item->department_id == $department->id)? 'selected':''; }}>{{ $department->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
-                                @error('purpose')
+                                @error('department_id')
                                 <div class="invalid-feedback">
                                     {{ $message; }}
                                 </div>
                                 @enderror
                             </div>
-
+                            <div class="mb-3 row">
+                                <label for="sender_id" class="col-sm-3 col-form-label">Pengirim</label>
+                                <div class="col-sm-9">
+                                    <select name="sender_id" class="form-control selectx" required>
+                                        <option value="">Pilih..</option>
+                                        @foreach ($senders as $sender)
+                                        <option value="{{ $sender->id }}" {{ ($item->sender_id == $sender->id)? 'selected':''; }}>{{ $sender->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @error('sender_id')
+                                <div class="invalid-feedback">
+                                    {{ $message; }}
+                                </div>
+                                @enderror
+                            </div>
                             <div class="mb-3 row">
                                 <label for="letter_file" class="col-sm-3 col-form-label">File</label>
                                 <div class="col-sm-9">

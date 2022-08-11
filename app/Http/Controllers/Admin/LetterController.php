@@ -111,6 +111,7 @@ class LetterController extends Controller
                         <a class="btn btn-primary btn-xs" href="' . route('letter.edit', $item->id) . '">
                             <i class="fas fa-edit"></i> &nbsp; Ubah
                         </a>
+                       
                         <form action="' . route('letter.destroy', $item->id) . '" method="POST" onsubmit="return confirm('."'Anda akan menghapus item ini dari situs anda?'".')">
                             ' . method_field('delete') . csrf_field() . '
                             <button class="btn btn-danger btn-xs">

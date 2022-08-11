@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-Surat Masuk
+Surat Disposisi
 @endsection
 
 @section('container')
@@ -13,7 +13,7 @@ Surat Masuk
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
                             <div class="page-header-icon"><i data-feather="user"></i></div>
-                            Surat Masuk
+                            Surat Disposisi
                         </h1>
                     </div>
                 </div>
@@ -26,11 +26,18 @@ Surat Masuk
             <div class="col-lg-12">
                 <div class="card card-header-actions mb-4">
                     <div class="card-header">
-                        List Surat Masuk
-                        <a class="btn btn-sm btn-success" href="{{ route('print-surat-masuk') }}" target="_blank">
-                            <i data-feather="printer"></i> &nbsp;
-                            Cetak Laporan
-                        </a>
+                        List Surat Disposisi
+                        <div>
+                            <a class="btn btn-sm btn-primary" href="{{ route('disposisi.create') }}">
+                                <i data-feather="printer"></i> &nbsp;
+                                Tambah Surat Disposisi
+                            </a>
+                            <a class="btn btn-sm btn-success" href="{{ route('print-surat-disposisi') }}" target="_blank">
+                                <i data-feather="printer"></i> &nbsp;
+                                Cetak Laporan Disposisi
+                            </a>
+                        </div>
+
                     </div>
                     <div class="card-body">
                         {{-- Alert --}}
@@ -55,15 +62,18 @@ Surat Masuk
                             <thead>
                                 <tr>
                                     <th width="10">No.</th>
-                                    <th>No. Surat</th>
-                                    <th>Tanggal</th>
-                                    <th>Perihal</th>
-                                    <th>Departemen</th>
-                                    <th>Pengirim</th>
+                                    <th>No.Surat</th>
+                                    <th>Lampiran</th>
+                                    <th>Status</th>
+                                    <th>tgl_selesai</th>
+                                    <th>Penerima Disposisi</th>
+                                    <th>Kepada</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
-                            <tbody></tbody>
+                            <tbody>
+
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -88,30 +98,35 @@ Surat Masuk
                 searchable: false
             },
             {
-                data: 'letter_no',
-                name: 'letter_no'
+                data: 'letter_id',
+                name: 'letter_id'
             },
             {
-                data: 'letter_date',
-                name: 'letter_date'
+                data: 'lampiran',
+                name: 'lampiran'
             },
             {
-                data: 'regarding',
-                name: 'regarding'
+                data: 'status',
+                name: 'status'
             },
             {
-                data: 'department.name',
-                name: 'department.name'
+                data: 'tgl_selesai',
+                name: 'tgl_selesai'
             },
             {
-                data: 'sender.name',
-                name: 'sender.name'
+                data: 'penerima_disposisi',
+                name: 'penerima_disposisi'
             },
+            {
+                data: 'kepada',
+                name: 'kepada'
+            }, 
+
             {
                 data: 'action',
                 name: 'action',
                 orderable: false,
-                searcable: true,
+                searcable: false,
                 width: '15%'
             },
         ]
