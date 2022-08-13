@@ -128,8 +128,8 @@ Tambah Surat
                             <div class="mb-3 row">
                                 <label for="disposisi" class="col-sm-3 col-form-label">Tujuan Disposisi</label>
                                 <div class="col-sm-9">
-                                    <select name="disposisi" class="form-control selectx" required>
-                                        <option value="">Pilih..</option>
+                                    <select name="disposisi" class="form-control" required>
+                                        <option value="">Pilih Salah Satu..</option>
                                         <option value="WAKIL REKTOR I">WAKIL REKTOR I</option>
                                         <option value="WAKIL REKTOR II">WAKIL REKTOR II</option>
                                         <option value="KEPALA BIRO">KEPALA BIRO</option>
@@ -154,8 +154,8 @@ Tambah Surat
                             <div class="mb-3 row">
                                 <label for="department_id" class="col-sm-3 col-form-label">Departemen</label>
                                 <div class="col-sm-9">
-                                    <select name="department_id" class="form-control selectx" required>
-                                        <option value="">Pilih..</option>
+                                    <select name="department_id" class="form-control" required>
+                                        <option value="">Pilih Departemen Pengirim..</option>
                                         @foreach ($departments as $department)
                                         <option value="{{ $department->id }}" {{ (old('department_id') == $department->id)? 'selected':''; }}>{{ $department->name }}</option>
                                         @endforeach
@@ -170,8 +170,8 @@ Tambah Surat
                             <div class="mb-3 row">
                                 <label for="sender_id" class="col-sm-3 col-form-label">Pengirim</label>
                                 <div class="col-sm-9">
-                                    <select name="sender_id" class="form-control selectx" required>
-                                        <option value="">Pilih..</option>
+                                    <select name="sender_id" class="form-control" required>
+                                        <option value="">Pilih Personal Pengirim..</option>
                                         @foreach ($senders as $sender)
                                         <option value="{{ $sender->id }}" {{ (old('sender_id') == $sender->id)? 'selected':''; }}>{{ $sender->name }}</option>
                                         @endforeach

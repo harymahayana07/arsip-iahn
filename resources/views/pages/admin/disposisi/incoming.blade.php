@@ -58,7 +58,7 @@ Surat Disposisi
                         </div>
                         @endif
                         {{-- List Data --}}
-                        <table class="table table-striped table-hover table-sm" id="crudTable">
+                        <table class="table table-striped table-hover table-sm table-responsive" id="crudTable">
                             <thead>
                                 <tr>
                                     <th width="10">No.</th>
@@ -98,8 +98,8 @@ Surat Disposisi
                 searchable: false
             },
             {
-                data: 'letter_id',
-                name: 'letter_id'
+                data: 'letter.letter_no',
+                name: 'letter.letter_no'
             },
             {
                 data: 'lampiran',
@@ -120,7 +120,7 @@ Surat Disposisi
             {
                 data: 'kepada',
                 name: 'kepada'
-            }, 
+            },
 
             {
                 data: 'action',

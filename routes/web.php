@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\DisposisiController;
 use App\Http\Controllers\Admin\LetteroutController;
 
 use App\Models\Department;
+use PhpParser\Node\Expr\Print_;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,7 @@ Route::prefix('admin')
         Route::resource('/letterout', LetteroutController::class, ['except' => ['show']]);
         Route::get('letterout/surat-keluar', [LetteroutController::class, 'outgoing_mail'])->name('surat-keluar');
         Route::get('letterout/surat/{id}', [LetteroutController::class, 'show'])->name('detail-surat-keluar');
+        Route::get('disposisi/surat-disposisi/{id}', [DisposisiController::class, 'disposisiprint'])->name('disposisi-surat');
         Route::get('letterout/download/{id}', [LetteroutController::class, 'download_letter'])->name('download-surat-keluar');
         // disposisi / pengajuan disposisi
         Route::resource('/disposisi', DisposisiController::class, ['except' => ['show']]);
@@ -61,7 +63,7 @@ Route::prefix('admin')
         //print
         Route::get('print/surat-masuk', [PrintController::class, 'index'])->name('print-surat-masuk');
         Route::get('print/surat-keluar', [PrintController::class, 'outgoing'])->name('print-surat-keluar');
-    Route::get('print/surat-disposisi', [PrintController::class, 'outgoing'])->name('print-surat-disposisi');
+        Route::get('print/surat-disposisi', [PrintController::class, 'disposisiprintall'])->name('print-surat-disposisi');
         // user dan setting
         Route::resource('user', UserController::class);
         Route::resource('setting', SettingController::class, ['except' => ['show']]);

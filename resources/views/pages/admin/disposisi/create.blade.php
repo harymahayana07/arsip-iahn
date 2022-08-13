@@ -51,7 +51,7 @@ Tambah Surat Disposisi
                                     <select name="letter_id" class="form-control selectx" required>
                                         <option value="">Pilih..</option>
                                         @foreach ($letters as $letter)
-                                        <option value="{{ $letter->letter_no }}">{{ $letter->letter_no }}</option>
+                                        <option value="{{ $letter->id }}">{{ $letter->letter_no }}</option>
                                         @endforeach
                                     </select>
                                 </div>
