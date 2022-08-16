@@ -103,18 +103,17 @@
                 </td>
                 <td valign="top">
                     <table border="1">
-                       
-                            <tr>
-                                <td width="93"><span style="font-size: x-small;"> &nbsp; Status : </span></td>
-                                <td width="200"><span style="font-size: x-small;"><input type="checkbox" value="">&emsp;Asli</span>&emsp;&emsp;
-                                    <span style="font-size: x-small;"><input type="checkbox" value="">&emsp;Tembusan</span>
-                                </td>
-                            </tr>
-                      
+
+                        <tr>
+                            <td width="93"><span style="font-size: x-small;"> &nbsp; Status : </span></td>
+                            <td width="200"><span style="font-size: x-small;"><input type="checkbox" value="">&emsp;Asli</span>&emsp;&emsp;
+                                <span style="font-size: x-small;"><input type="checkbox" value="">&emsp;Tembusan</span>
+                            </td>
+                        </tr>
+
                     </table>
                     <table border="0">
                         <tbody>
-                            <tr>
                             <tr>
                                 <td width="93"><span style="font-size: x-small;">&nbsp; Sifat : </span></td>
                                 <td width="200">
@@ -125,131 +124,185 @@
                                     <span style="font-size: x-small;"><input type="checkbox" value="">&emsp; Rahasia</span>
                                 </td>
                             </tr>
+                        </tbody>
+                    </table>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <table border="0" cellpadding="1" style="width: 400px;">
+                        <tbody>
+                            <tr valign="top">
+                                <td width="93"><span style="font-size: x-small;"> Perihal </span></td>
+                                <td width="8"><span style="font-size: x-small;">:</span></td>
+                                <td width="200" style="height: 50px;"><span style="font-size: x-small;"> {{ $item->letter->regarding  }} </span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" valign="top">
+                    <table border="0" cellpadding="1" style="width: 400px;">
+                        <tbody>
+                            <tr valign="top">
+                                <td width="400"><span style="font-size: x-small;">&emsp;<U>Disposisi Rektor IAHN Gde Pudja Mataram kepada :</U> </span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table border="0" cellpadding="1" style="width: 400px;">
+                        <tfoot>
+                            <tr>
+                                <div class="row" style="float: left;">
+                                    <div class="col">
+                                        <td width="150">
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Wakil Rektor I</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Kepala Biro</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Kasubbag TU</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Dekan Fakultas</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Koordinator Prodi</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Kepala Unit</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Lainnya</span><br>
+                                        </td>
+                                    </div>
+                                    <div class="col">
+                                        <td width="250" valign="top">
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Wakil Rektor II</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Kabag</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Direktur</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Ketua Jurusan</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Ketua Lembaga</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Kepala Lab</span>
+                                        </td>
+                                    </div>
+                                </div>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </td>
+                <td colspan="1" valign="top">
+                    <table border="0" cellpadding="1" style="width: 200px;">
+                        <tbody>
+                            <tr valign="top">
+                                <td width="400"><span style="font-size: x-small;">&emsp;<U>Petunjuk :</U> </span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table border="0" cellpadding="1" style="width: 280px;">
+                        <tfoot>
+                            <tr>
+                                <div class="row" style="float: left;">
+                                    <div class="col">
+                                        <td width="100">
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Setuju</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Tolak</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Teliti & Pendapat</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Untuk Diketahui</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Selesaikan</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Sesuai catatan</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Untuk Perhatian</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;Edarkan</span><br>
+                                            <span style="font-size: x-small;">&emsp;<input type="checkbox" value="">&nbsp;-</span><br>
+                                        </td>
+                                    </div>
+                                    <div class="col">
+                                        <td width="100" valign="top">
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Jawab</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Perbaiki</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Bicarakan dengan saya</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Bicarakan bersama</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Ingatkan</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Simpan</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Disiapkan</span><br>
+                                            <span style="font-size: x-small;"><input type="checkbox" value="">&nbsp;Harap dihadiri/diwakili</span><br>
+                                        </td>
+                                    </div>
+                                </div>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" style="height: 80px;" valign="top">
+                    <table border="0" cellpadding="1" style="width: 400px;">
+                        <tbody>
+                            <tr valign="top">
+                                <td width="93"><span style="font-size: x-small;"> <u>CATATAN REKTOR</u> </span></td>
+                                <td width="8"><span style="font-size: x-small;">:</span></td>
+                                <td width="200" style="height: 50px;"><span style="font-size: x-small;"> {{ $item->catatan_rektor  }} </span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <span style="font-size: x-small;">Tanggal Penyelesaian : {{ $item->tgl_selesai }}</span>
+                    </div>
+                </td>
+                <td valign="top">
+                    <div>
+                        <span style="font-size: x-small;">Diajukan kembali tanggal : {{ $item->tgl_aju_kembali }}</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <span style="font-size: x-small;">Penerima : <br>DISPOSISI : {{ $item->penerima_disposisi }}</span>
+                    </div>
+                </td>
+                <td valign="top">
+                    <div>
+                        <span style="font-size: x-small;">Penerima : <br>DISPOSISI : {{ $item->penerima_disposisi }}</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="height: 80px;" valign="top">
+                    <div>
+                        <span style="font-size: x-small;">Kepada : {{ $item->kepada }} <br>Petunjuk : {{ $item->petunjuk }}</span>
+                    </div>
+                </td>
+                <td valign="top">
+                    <div>
+                        <span style="font-size: x-small;">Kepada : belum-ada <br>Petunjuk : belum ada</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <span style="font-size: x-small;">Tanggal Penyelesaian : {{ $item->tgl_selesai }}</span>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <span style="font-size: x-small;">Diajukan kembali tanggal : {{ $item->tgl_aju_kembali }}</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div>
+                        <span style="font-size: x-small;">Penerima : {{ $item->penerima_disposisi }}</span>
+                    </div>
+                </td>
+                <td valign="top">
+                    <div>
+                        <span style="font-size: x-small;">Penerima : {{ $item->penerima_disposisi }}</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="302"></td>
+                <td width="343"></td>
+                <td width="339"></td>
             </tr>
         </tbody>
-    </table>
-
-    </td>
-    </tr>
-    <tr>
-        <td colspan="3">
-            <table border="0" cellpadding="1" style="width: 400px;">
-                <tbody>
-                    <tr>
-                        <td width="93"><span style="font-size: x-small;"> Perihal </span></td>
-                        <td width="8"><span style="font-size: x-small;">:</span></td>
-                        <td width="200"><span style="font-size: x-small;"> {{ $item->perihal  }} </span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    <tr>
-        <td width="302"></td>
-        <td width="343"></td>
-        <td width="339"></td>
-    </tr>
-    <tr>
-        <td>
-            <table border="0" style="width: 239px;">
-                <tbody>
-                    <tr>
-                        <td width="74"><span style="font-size: x-small;">kepada yth</span></td>
-                        <td width="11">
-                        </td>
-                        <td width="140"></td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-size: x-small;">orangtua/wali siswa</span></td>
-                        <td></td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-size: x-small;">di</span></td>
-                        <td></td>
-                        <td>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span style="font-size: x-small;">tempat</span></td>
-                        <td></td>
-                        <td>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td colspan="3" height="270" valign="top">
-            <div align="justify">
-                <pre><span style="font-size: x-small;">Dengan hormat,
-Sehubungan akan diadakannya magang bumigota (PKL) siswa kelas maka kami selaku pihak sekolah akan membicarakan mengenai
-pelaksanaan Magang yang akan dilaksanakan pada :</span></pre>
-                <table border="0" style="width: 352px;">
-                    <tbody>
-                        <tr>
-                            <td width="80"><span style="font-size: x-small;">hari/tanggal</span></td>
-                            <td width="10"><span style="font-size: x-small;">:</span></td>
-                            <td width="248"><span style="font-size: x-small;">Rabu, 13 Agustus 2022</span></td>
-                        </tr>
-                        <tr>
-                            <td><span style="font-size: x-small;">waktu</span></td>
-                            <td><span style="font-size: x-small;">:</span></td>
-                            <td><span style="font-size: x-small;">08.00 - selesai</span></td>
-                        </tr>
-                        <tr>
-                            <td><span style="font-size: x-small;">tempat</span></td>
-                            <td><span style="font-size: x-small;">:</span></td>
-                            <td><span style="font-size: x-small;">IAHN GDE PUDJA MATARAM </span></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div align="justify">
-                    <span style="font-size: x-small;">
-
-                        Demikian surat ini kami sampaikan, kami harap ibu/bapa dapat menghadiri rapat ini. sekian dan terima kasih.</span>
-                </div>
-            </div>
-            <div align="center">
-                <span style="font-size: x-small;">Mengetahui</span>
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div align="center">
-                <span style="font-size: x-small;">Pembuat,</span>
-            </div>
-            <div align="center">
-
-            </div>
-            <div align="center">
-                <span style="font-size: x-small;">I Made Hary Mahayana </span>
-            </div>
-        </td>
-        <td></td>
-        <td valign="top">
-            <div align="center">
-                <span style="font-size: x-small;">Test peneriima, </span>
-            </div>
-            <div align="center">
-
-            </div>
-            <div align="center">
-                <span style="font-size: x-small;">Penerima dan lain lain.</span>
-            </div>
-        </td>
-    </tr>
-    </tbody>
     </table>
 
     <script>

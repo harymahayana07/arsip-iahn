@@ -27,10 +27,16 @@ Surat Masuk
                 <div class="card card-header-actions mb-4">
                     <div class="card-header">
                         List Surat Masuk
-                        <a class="btn btn-sm btn-success" href="{{ route('print-surat-masuk') }}" target="_blank">
-                            <i data-feather="printer"></i> &nbsp;
-                            Cetak Laporan
-                        </a>
+                        <div>
+                            <a class="btn btn-sm btn-primary" href="{{ route('letter.create') }}">
+                                <i data-feather="printer"></i> &nbsp;
+                                Tambah Surat Masuk
+                            </a>
+                            <a class="btn btn-sm btn-success" href="{{ route('print-surat-masuk') }}" target="_blank">
+                                <i data-feather="printer"></i> &nbsp;
+                                Cetak Laporan
+                            </a>
+                        </div>
                     </div>
                     <div class="card-body">
                         {{-- Alert --}}

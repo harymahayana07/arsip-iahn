@@ -16,6 +16,12 @@ Tambah Surat Keluar
                             Tambah Surat Keluar
                         </h1>
                     </div>
+                    <div class="col-12 col-xl-auto mb-3">
+                        <a class="btn btn-sm btn-light text-primary" href="{{ route('surat-keluar') }}">
+                            <i class="me-1" data-feather="arrow-left"></i>
+                            Kembali ke Semua Surat keluar
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

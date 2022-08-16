@@ -142,6 +142,7 @@ Tambah Surat
                                         <option value="KETUA LEMBAGA">KETUA LEMBAGA</option>
                                         <option value="KEPALA UNIT">KEPALA UNIT</option>
                                         <option value="KEPALA LAB">KEPALA LAB</option>
+                                        <option value="-">Tidak Ada</option>
                                     </select>
                                 </div>
                                 @error('disposisi')

@@ -95,7 +95,7 @@ Detail Surat
                    
                     <div class="card-body">
                         <div class="mb-3 row">
-                            <embed src="{{ Storage::url($item->letter_file) }}" width="500" height="375" type="application/pdf">
+                            <embed src="{{ Storage::url($item->letter->letter_file) }}" width="500" height="375" type="application/pdf">
                         </div>
                     </div>
                 </div>

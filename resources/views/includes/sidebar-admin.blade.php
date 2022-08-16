@@ -16,33 +16,21 @@
                 <div class="nav-link-icon"><i data-feather="users"></i></div>
                 Pengirim Surat
             </a>
-            <a class="nav-link {{ (request()->is('admin/letter/create')) ? 'active' : '' }}" href="{{ route('letter.create') }}">
-                <div class="nav-link-icon"><i data-feather="mail"></i></div>
-                Tambah Surat Masuk
-            </a>
-            <a class="nav-link {{ (request()->is('admin/letterout/create')) ? 'active' : '' }}" href="{{ route('letterout.create') }}">
-                <div class="nav-link-icon"><i data-feather="mail"></i></div>
-                Tambah Surat Keluar
-            </a>
             <a class="nav-link {{ (request()->is('admin/letter/surat-masuk')) ? 'active' : '' }}" href="{{ route('surat-masuk') }}">
-                <div class="nav-link-icon"><i data-feather="arrow-right"></i></div>
+                <div class="nav-link-icon"><i data-feather="mail"></i></div>
                 Surat Masuk
             </a>
             <a class="nav-link {{ (request()->is('admin/letterout/surat-keluar')) ? 'active' : '' }}" href="{{ route('surat-keluar') }}">
-                <div class="nav-link-icon"><i data-feather="arrow-left"></i></div>
+                <div class="nav-link-icon"><i data-feather="mail"></i></div>
                 Surat Keluar
-            </a>
-            <a class="nav-link {{ (request()->is('admin/user*')) ? 'active' : '' }}" href="{{ route('user.index') }}">
-                <div class="nav-link-icon"><i data-feather="user"></i></div>
-                Data User
             </a>
             <a class="nav-link {{ (request()->is('admin/disposisi/surat-disposisi')) ? 'active' : '' }}" href="{{ route('surat-disposisi') }}">
                 <div class="nav-link-icon"><i data-feather="mail"></i></div>
                 Pengajuan Disposisi
             </a>
-            <a class="nav-link {{ (request()->is('admin/setting*')) ? 'active' : '' }}" href="{{ route('setting.index') }}">
-                <div class="nav-link-icon"><i data-feather="settings"></i></div>
-                Profile
+            <a class="nav-link {{ (request()->is('admin/user*')) ? 'active' : '' }}" href="{{ route('user.index') }}">
+                <div class="nav-link-icon"><i data-feather="user"></i></div>
+                Data User
             </a>
         </div>
     </div>
