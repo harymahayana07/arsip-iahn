@@ -73,7 +73,7 @@ Ubah Surat
                             <div class="mb-3 row">
                                 <label for="letter_date" class="col-sm-3 col-form-label">Tanggal Surat</label>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control @error('letter_date') is-invalid @enderror" value="{{ $item->letter_date }}" name="letter_date" required>
+                                    <input type="date" class="form-control @error('letter_date') is-invalid @enderror" value="{{ old('letter_date',$item->letter_date) }}" name="letter_date" required>
                                 </div>
                                 @error('letter_date')
                                 <div class="invalid-feedback">
@@ -84,7 +84,7 @@ Ubah Surat
                             <div class="mb-3 row">
                                 <label for="date_received" class="col-sm-3 col-form-label">Tanggal Diterima</label>
                                 <div class="col-sm-9">
-                                    <input type="date" class="form-control @error('date_received') is-invalid @enderror" value="{{ $item->date_received }}" name="date_received" required>
+                                    <input type="date" class="form-control @error('date_received') is-invalid @enderror" value="{{ Date($item->letter_date) }}" name="date_received" required>
                                 </div>
                                 @error('date_received')
                                 <div class="invalid-feedback">
@@ -117,21 +117,24 @@ Ubah Surat
                             <!--  -->
                             <div class="mb-3 row">
                                 <label for="disposisi" class="col-sm-3 col-form-label">Tujuan Disposisi</label>
-                                <div class="col-sm-9">
-                                    <select name="disposisi" class="form-control selectx" required>
-                                        <option value="WAKIL REKTOR I" {{ ($item->disposisi == 'WAKIL REKTOR I')? 'selected':''; }}>WAKIL REKTOR I</option>
-                                        <option value="WAKIL REKTOR II" {{ ($item->disposisi == 'WAKIL REKTOR II')? 'selected':''; }}>WAKIL REKTOR II</option>
-                                        <option value="KEPALA BIRO" {{ ($item->disposisi == 'KEPALA BIRO')? 'selected':''; }}>KEPALA BIRO</option>
-                                        <option value="KABAG" {{ ($item->disposisi == 'KABAG')? 'selected':''; }}>KABAG</option>
-                                        <option value="KASUBBAG TU" {{ ($item->disposisi == 'KASUBBAG TU')? 'selected':''; }}>KASUBBAG TU</option>
-                                        <option value="DIREKTUR" {{ ($item->disposisi == 'DIREKTUR')? 'selected':''; }}>DIREKTUR</option>
-                                        <option value="DEKAN FAKULTAS" {{ ($item->disposisi == 'DEKAN FAKULTAS')? 'selected':''; }}>DEKAN FAKULTAS</option>
-                                        <option value="KETUA JURUSAN" {{ ($item->disposisi == 'KETUA JURUSAN')? 'selected':''; }}>KETUA JURUSAN</option>
-                                        <option value="KOORDINATOR PRODI" {{ ($item->disposisi == 'KOORDINATOR PRODI')? 'selected':''; }}>KOORDINATOR PRODI</option>
-                                        <option value="KETUA LEMBAGA" {{ ($item->disposisi == 'KETUA LEMBAGA')? 'selected':''; }}>KETUA LEMBAGA</option>
-                                        <option value="KEPALA UNIT" {{ ($item->disposisi == 'KEPALA UNIT')? 'selected':''; }}>KEPALA UNIT</option>
-                                        <option value="KEPALA LAB" {{ ($item->disposisi == 'KEPALA LAB')? 'selected':''; }}>KEPALA LAB</option>
-                                    </select>
+                                <div class="col-sm-9 row" style="float: right;">
+                                    <div class="col-sm-4">
+                                        <input type="checkbox" value="Wakil Rektor I" name="disposisi[]" {{ in_array('Wakil Rektor I', $disposisi) ? 'checked' : '' }}> Wakil Rektor I <br>
+                                        <input type="checkbox" value="Kepala Biro" name="disposisi[]" {{ in_array('Kepala Biro', $disposisi) ? 'checked' : '' }}> Kepala Biro <br>
+                                        <input type="checkbox" value="Kasubbag" name="disposisi[]" {{ in_array('Kasubbag', $disposisi) ? 'checked' : '' }}> Kasubbag <br>
+                                        <input type="checkbox" value="Dekan Fakultas" name="disposisi[]" {{ in_array('Dekan Fakultas', $disposisi) ? 'checked' : '' }}> Dekan Fakultas <br>
+                                        <input type="checkbox" value="Koordinator Prodi" name="disposisi[]" {{ in_array('Koordinator Prodi', $disposisi) ? 'checked' : '' }}> Koordinator Prodi <br>
+                                        <input type="checkbox" value="Kepala Unit" name="disposisi[]" {{ in_array('Kepala Unit', $disposisi) ? 'checked' : '' }}> Kepala Unit <br>
+                                        <input type="checkbox" value="-" name="disposisi[]" {{ in_array('-', $disposisi) ? 'checked' : '' }}> -
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <input type="checkbox" value="Wakil Rektor II" name="disposisi[]" {{ in_array('Wakil Rektor II', $disposisi) ? 'checked' : '' }}> Wakil Rektor II <br>
+                                        <input type="checkbox" value="Kabag" name="disposisi[]" {{ in_array('Kabag', $disposisi) ? 'checked' : '' }}> Kabag <br>
+                                        <input type="checkbox" value="Direktur" name="disposisi[]" {{ in_array('Direktur', $disposisi) ? 'checked' : '' }}> Direktur <br>
+                                        <input type="checkbox" value="Ketua Jurusan" name="disposisi[]" {{ in_array('Ketua Jurusan', $disposisi) ? 'checked' : '' }}> Ketua Jurusan <br>
+                                        <input type="checkbox" value="Ketua Lembaga" name="disposisi[]" {{ in_array('Ketua Lembaga', $disposisi) ? 'checked' : '' }}> Ketua Lembaga <br>
+                                        <input type="checkbox" value="Kepala Lab" name="disposisi[]" {{ in_array('Kepala Lab', $disposisi) ? 'checked' : '' }}> Kepala Lab <br>
+                                    </div>
                                 </div>
                                 @error('disposisi')
                                 <div class="invalid-feedback">
@@ -141,10 +144,10 @@ Ubah Surat
                             </div>
                             <!--  -->
                             <div class="mb-3 row">
-                                <label for="department_id" class="col-sm-3 col-form-label">Departemen</label>
+                                <label for="department_id" class="col-sm-3 col-form-label">Departemen Pengirim</label>
                                 <div class="col-sm-9">
                                     <select name="department_id" class="form-control selectx" required>
-                                        <option value="">Pilih..</option>
+                                        <option value="">Pilih Departmen Pengirim..</option>
                                         @foreach ($departments as $department)
                                         <option value="{{ $department->id }}" {{ ($item->department_id == $department->id)? 'selected':''; }}>{{ $department->name }}</option>
                                         @endforeach

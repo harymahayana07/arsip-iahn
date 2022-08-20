@@ -44,7 +44,7 @@ Ubah Surat Disposisi
             <div class="row gx-4">
                 <div class="col-lg-9">
                     <div class="card mb-4">
-                        <div class="card-header">Form Edit Surat Disposisi</div>
+                        <div class="card-header">Form Ubah Disposisi <span style="color: green;"> * Harus diisi</span></div>
                         <div class="card-body">
                             <div class="mb-3 row">
                                 <label for="letter_id" class="col-sm-3 col-form-label">No. Surat</label>
@@ -139,9 +139,9 @@ Ubah Surat Disposisi
                                 @enderror
                             </div>
                             <div class="mb-3 row">
-                                <label for="catatan_rektor" class="col-sm-3 col-form-label">Catatan Rektor</label>
+                                <label for="catatan_rektors" class="col-sm-3 col-form-label">Catatan Rektor</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control @error('catatan_rektor') is-invalid @enderror" value="{{ $item->catatan_rektor }}" name="catatan_rektor" placeholder="Catatan Dari Rektor.." required>
+                                    <textarea id="catatan_rektors" class="form-control @error('catatan_rektor') is-invalid @enderror" name="catatan_rektor" placeholder="Catatan Rektor.." required>{{ old('catatan_rektor', $item->catatan_rektor) }}</textarea>
                                 </div>
                                 @error('catatan_rektor')
                                 <div class="invalid-feedback">
@@ -149,7 +149,15 @@ Ubah Surat Disposisi
                                 </div>
                                 @enderror
                             </div>
-                            <!--  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-4">
+                <div class="col-lg-9">
+                    <div class="card mb-4">
+                        <div class="card-header">Form Disposisi Lanjutan <span style="color: green;"> * Harus diisi</span></div>
+                        <div class="card-body">
                             <div class="mb-3 row">
                                 <label for="tgl_selesai" class="col-sm-3 col-form-label">Tanggal Penyelesaian</label>
                                 <div class="col-sm-9">
@@ -162,6 +170,59 @@ Ubah Surat Disposisi
                                 @enderror
                             </div>
                             <div class="mb-3 row">
+                                <label for="kepada" class="col-sm-3 col-form-label">Kepada</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control @error('kepada') is-invalid @enderror" value="{{ $item->kepada }}" name="kepada" placeholder="Kepada..." required>
+                                </div>
+                                @error('kepada')
+                                <div class="invalid-feedback">
+                                    {{ $message; }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="petunjuks" class="col-sm-3 col-form-label">Petunjuk</label>
+                                <div class="col-sm-9">
+                                    <textarea id="petunjuks" class="form-control @error('petunjuk_kpd_1') is-invalid @enderror" name="petunjuk_kpd_1" placeholder="Petunjuk Untuk Penerima Disposisi.." required>{{ old('petunjuk_kpd_1', $item->petunjuk_kpd_1) }}</textarea>
+                                </div>
+                                @error('petunjuk_kpd_1')
+                                <div class="invalid-feedback">
+                                    {{ $message; }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="tgl_selesai_2" class="col-sm-3 col-form-label">Tanggal Penyelesaian</label>
+                                <div class="col-sm-9">
+                                    <input type="date" class="form-control @error('tgl_selesai_2') is-invalid @enderror" value="{{ $item->tgl_selesai_2 }}" name="tgl_selesai_2" required>
+                                </div>
+                                @error('tgl_selesai_2')
+                                <div class="invalid-feedback">
+                                    {{ $message; }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="penerima_2" class="col-sm-3 col-form-label">Penerima</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control @error('penerima_2') is-invalid @enderror" value="{{ $item->penerima_2 }}" name="penerima_2" placeholder="Penerima 2..." required>
+                                </div>
+                                @error('penerima_2')
+                                <div class="invalid-feedback">
+                                    {{ $message; }}
+                                </div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-4">
+                <div class="col-lg-9">
+                    <div class="card mb-4">
+                        <div class="card-header">Form Pengajuan Kembali Disposisi <span style="color: green;"> * Kosongkan Jika Tidak diisi</span></div>
+                        <div class="card-body">
+                            <div class="mb-3 row">
                                 <label for="tgl_aju_kembali" class="col-sm-3 col-form-label">Tanggal Di Ajukan Kembali</label>
                                 <div class="col-sm-9">
                                     <input type="date" class="form-control @error('tgl_aju_kembali') is-invalid @enderror" value="{{ $item->tgl_aju_kembali }}" name="tgl_aju_kembali" required>
@@ -173,47 +234,83 @@ Ubah Surat Disposisi
                                 @enderror
                             </div>
                             <div class="mb-3 row">
-                                <label for="penerima_disposisi" class="col-sm-3 col-form-label">Penerima Disposisi</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control @error('penerima_disposisi') is-invalid @enderror" value="{{ $item->penerima_disposisi }}" name="penerima_disposisi" placeholder="Penerima Disposisi.." required>
+                                <label for="penerima_disposisi_2" class="col-sm-3 col-form-label">Penerima Disposisi</label>
+                                <div class="col-sm-9 row" style="float: right;">
+                                    <div class="col-sm-4">
+                                        <input type="checkbox" value="Wakil Rektor I" name="penerima_disposisi_2[]" {{ in_array('Wakil Rektor I', $penerima_disposisi_2) ? 'checked' : '' }}> Wakil Rektor I <br>
+                                        <input type="checkbox" value="Kepala Biro" name="penerima_disposisi_2[]" {{ in_array('Kepala Biro', $penerima_disposisi_2) ? 'checked' : '' }}> Kepala Biro <br>
+                                        <input type="checkbox" value="Kasubbag" name="penerima_disposisi_2[]" {{ in_array('Kasubbag', $penerima_disposisi_2) ? 'checked' : '' }}> Kasubbag <br>
+                                        <input type="checkbox" value="Dekan Fakultas" name="penerima_disposisi_2[]" {{ in_array('Dekan Fakultas', $penerima_disposisi_2) ? 'checked' : '' }}> Dekan Fakultas <br>
+                                        <input type="checkbox" value="Koordinator Prodi" name="penerima_disposisi_2[]" {{ in_array('Koordinator Prodi', $penerima_disposisi_2) ? 'checked' : '' }}> Koordinator Prodi <br>
+                                        <input type="checkbox" value="Kepala Unit" name="penerima_disposisi_2[]" {{ in_array('Kepala Unit', $penerima_disposisi_2) ? 'checked' : '' }}> Kepala Unit <br>
+                                        <input type="checkbox" value="-" name="penerima_disposisi_2[]" {{ in_array('-', $penerima_disposisi_2) ? 'checked' : '' }}> -
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <input type="checkbox" value="Wakil Rektor II" name="penerima_disposisi_2[]" {{ in_array('Wakil Rektor II', $penerima_disposisi_2) ? 'checked' : '' }}> Wakil Rektor II <br>
+                                        <input type="checkbox" value="Kabag" name="penerima_disposisi_2[]" {{ in_array('Kabag', $penerima_disposisi_2) ? 'checked' : '' }}> Kabag <br>
+                                        <input type="checkbox" value="Direktur" name="penerima_disposisi_2[]" {{ in_array('Direktur', $penerima_disposisi_2) ? 'checked' : '' }}> Direktur <br>
+                                        <input type="checkbox" value="Ketua Jurusan" name="penerima_disposisi_2[]" {{ in_array('Ketua Jurusan', $penerima_disposisi_2) ? 'checked' : '' }}> Ketua Jurusan <br>
+                                        <input type="checkbox" value="Ketua Lembaga" name="penerima_disposisi_2[]" {{ in_array('Ketua Lembaga', $penerima_disposisi_2) ? 'checked' : '' }}> Ketua Lembaga <br>
+                                        <input type="checkbox" value="Kepala Lab" name="penerima_disposisi_2[]" {{ in_array('Kepala Lab', $penerima_disposisi_2) ? 'checked' : '' }}> Kepala Lab <br>
+                                    </div>
                                 </div>
-                                @error('penerima_disposisi')
+                                @error('penerima_disposisi_2')
                                 <div class="invalid-feedback">
                                     {{ $message; }}
                                 </div>
                                 @enderror
                             </div>
                             <div class="mb-3 row">
-                                <label for="kepada" class="col-sm-3 col-form-label">Kepada</label>
+                                <label for="kepada_2" class="col-sm-3 col-form-label">Kepada</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control @error('kepada') is-invalid @enderror" value="{{ $item->kepada }}" name="kepada" placeholder="Kepada.." required>
+                                    <input type="text" class="form-control @error('kepada_2') is-invalid @enderror" value="{{ $item->kepada_2 }}" name="kepada_2" placeholder="Kepada 2.." required>
                                 </div>
-                                @error('kepada')
+                                @error('kepada_2')
                                 <div class="invalid-feedback">
                                     {{ $message; }}
                                 </div>
                                 @enderror
                             </div>
                             <div class="mb-3 row">
-                                <label for="letter_file" class="col-sm-3 col-form-label">File</label>
+                                <label for="petunjukss" class="col-sm-3 col-form-label">Petunjuk</label>
                                 <div class="col-sm-9">
-                                    <input type="file" class="form-control @error('letter_file') is-invalid @enderror" value="{{ old('letter_file') }}" name="letter_file">
-                                    <div id="letter_file" class="form-text">Ekstensi Harus .pdf | Kosongkan file jika tidak diisi</div>
+                                    <textarea id="petunjukss" class="form-control @error('petunjuk_kpd_2') is-invalid @enderror" name="petunjuk_kpd_2" placeholder="Petunjuk Untuk Penerima Disposisi.." required>{{ old('petunjuk_kpd_2', $item->petunjuk_kpd_2) }}</textarea>
                                 </div>
-                                @error('letter_file')
+                                @error('petunjuk_kpd_2')
                                 <div class="invalid-feedback">
                                     {{ $message; }}
                                 </div>
                                 @enderror
                             </div>
                             <div class="mb-3 row">
-                                <label for="letter_file" class="col-sm-3 col-form-label"></label>
+                                <label for="tgl_selesai_3" class="col-sm-3 col-form-label">Tanggal Penyelesaian</label>
                                 <div class="col-sm-9">
-                                    <button type="submit" class="btn btn-primary">Ubah</button>
+                                    <input type="date" class="form-control @error('tgl_selesai_3') is-invalid @enderror" value="{{ $item->tgl_selesai_3 }}" name="tgl_selesai_3" required>
                                 </div>
+                                @error('tgl_selesai_3')
+                                <div class="invalid-feedback">
+                                    {{ $message; }}
+                                </div>
+                                @enderror
+                            </div>
+                            <div class="mb-3 row">
+                                <label for="penerima_3" class="col-sm-3 col-form-label">Penerima</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control @error('penerima_3') is-invalid @enderror" value="{{ $item->penerima_3 }}" name="penerima_3" placeholder="Penerima 3..." required>
+                                </div>
+                                @error('penerima_3')
+                                <div class="invalid-feedback">
+                                    {{ $message; }}
+                                </div>
+                                @enderror
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary">Ubah</button>
                 </div>
             </div>
         </form>

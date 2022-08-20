@@ -19,11 +19,10 @@ class CreateDisposisisTable extends Migration
             $table->string('lampiran');
             $table->string('status');
             $table->string('sifat');
-            $table->string('petunjuk');
-            $table->string('catatan_rektor');
+            $table->string('petunjuk')->nullable();
+            $table->text('catatan_rektor')->nullable();
             $table->date('tgl_selesai')->nullable();
             $table->date('tgl_aju_kembali')->nullable();
-            $table->string('penerima_disposisi')->nullable();
             $table->string('penerima_disposisi_2')->nullable();
             $table->string('kepada')->nullable();
             $table->string('kepada_2')->nullable();
@@ -33,6 +32,7 @@ class CreateDisposisisTable extends Migration
             $table->date('tgl_selesai_3')->nullable();
             $table->string('penerima_2')->nullable();
             $table->string('penerima_3')->nullable();
+            $table->string('letter_file')->nullable();
             $table->timestamps();
         });
     }

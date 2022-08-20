@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,6 +26,7 @@ class Letter extends Model
     protected $hidden = [
 
     ];
+    // protected $dates = ['letter_date','date_received'];
 
     public function department()
     {
@@ -35,4 +37,5 @@ class Letter extends Model
     {
         return $this->belongsTo(Sender::class, 'sender_id','id');
     }
+    
 }

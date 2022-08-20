@@ -12,8 +12,8 @@ Surat Keluar
                 <div class="row align-items-center justify-content-between pt-3">
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i data-feather="user"></i></div>
-                            Surat Keluar
+                            <div class="page-header-icon"><i data-feather="mail"></i><i data-feather="arrow-left"></i></div>
+                            Data Surat Keluar
                         </h1>
                     </div>
                 </div>
@@ -26,13 +26,13 @@ Surat Keluar
             <div class="col-lg-12">
                 <div class="card card-header-actions mb-4">
                     <div class="card-header">
-                        List Surat Keluar
+                        Data :
                         <div>
-                            <a class="btn btn-sm btn-success" href="{{ route('letterout.create') }}">
-                                <i data-feather="printer"></i> &nbsp;
-                                Tambah Data Surat Keluar
+                            <a class="btn btn-sm btn-warning" href="{{ route('letterout.create') }}">
+                                <i data-feather="plus-square"></i> &nbsp;
+                                Tambah Surat
                             </a>
-                            <a class="btn btn-sm btn-primary" href="{{ route('print-surat-keluar') }}" target="_blank">
+                            <a class="btn btn-sm btn-success" href="{{ route('print-surat-keluar') }}" target="_blank">
                                 <i data-feather="printer"></i> &nbsp;
                                 Cetak Laporan
                             </a>
@@ -57,19 +57,21 @@ Surat Keluar
                         </div>
                         @endif
                         {{-- List Data --}}
-                        <table class="table table-striped table-hover table-sm" id="crudTable">
-                            <thead>
-                                <tr>
-                                    <th width="10">No.</th>
-                                    <th>No. Surat</th>
-                                    <th>Tanggal</th>
-                                    <th>Perihal</th>
-                                    <th>Tujuan</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                        <div class="table table-responsive">
+                            <table class="table table-striped table-hover table-sm" id="crudTable">
+                                <thead>
+                                    <tr>
+                                        <th width="10">No.</th>
+                                        <th>No. Surat</th>
+                                        <th>Tanggal</th>
+                                        <th>Perihal</th>
+                                        <th>Tujuan</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

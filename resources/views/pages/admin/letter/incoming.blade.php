@@ -12,8 +12,8 @@ Surat Masuk
                 <div class="row align-items-center justify-content-between pt-3">
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i data-feather="user"></i></div>
-                            Surat Masuk
+                            <div class="page-header-icon"><i data-feather="mail"></i><i data-feather="arrow-right"></i></div>
+                            Data Surat Masuk
                         </h1>
                     </div>
                 </div>
@@ -26,11 +26,11 @@ Surat Masuk
             <div class="col-lg-12">
                 <div class="card card-header-actions mb-4">
                     <div class="card-header">
-                        List Surat Masuk
+                        Data :
                         <div>
-                            <a class="btn btn-sm btn-primary" href="{{ route('letter.create') }}">
-                                <i data-feather="printer"></i> &nbsp;
-                                Tambah Surat Masuk
+                            <a class="btn btn-sm btn-warning" href="{{ route('letter.create') }}">
+                                <i data-feather="plus-square"></i> &nbsp;
+                                Tambah Surat
                             </a>
                             <a class="btn btn-sm btn-success" href="{{ route('print-surat-masuk') }}" target="_blank">
                                 <i data-feather="printer"></i> &nbsp;
@@ -57,20 +57,24 @@ Surat Masuk
                         </div>
                         @endif
                         {{-- List Data --}}
-                        <table class="table table-striped table-hover table-sm" id="crudTable">
-                            <thead>
-                                <tr>
-                                    <th width="10">No.</th>
-                                    <th>No. Surat</th>
-                                    <th>Tanggal</th>
-                                    <th>Perihal</th>
-                                    <th>Departemen</th>
-                                    <th>Pengirim</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody></tbody>
-                        </table>
+                        <div class="table table-responsive">
+                            <table class="table table-striped table-hover table-sm" id="crudTable">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>No. Surat</th>
+                                        <th>Tanggal Masuk</th>
+                                        <th>Tanggal Terima</th>
+                                        <th>No. Agenda</th>
+                                        <th>Perihal</th>
+                                        <th>Disposisi</th>
+                                        <th>Pengirim</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,15 +103,25 @@ Surat Masuk
             },
             {
                 data: 'letter_date',
-                name: 'letter_date'
+                name: 'letter_date',
+                width: '10%'
+            },
+            {
+                data: 'date_received',
+                name: 'date_received',
+                width: '10%'
+            },
+            {
+                data: 'agenda_no',
+                name: 'agenda_no'
             },
             {
                 data: 'regarding',
                 name: 'regarding'
             },
             {
-                data: 'department.name',
-                name: 'department.name'
+                data: 'disposisi',
+                name: 'disposisi'
             },
             {
                 data: 'sender.name',

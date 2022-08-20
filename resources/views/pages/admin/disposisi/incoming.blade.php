@@ -12,8 +12,8 @@ Surat Disposisi
                 <div class="row align-items-center justify-content-between pt-3">
                     <div class="col-auto mb-3">
                         <h1 class="page-header-title">
-                            <div class="page-header-icon"><i data-feather="user"></i></div>
-                            Surat Disposisi
+                            <div class="page-header-icon"><i data-feather="mail"></i></div>
+                            Data Surat Disposisi
                         </h1>
                     </div>
                 </div>
@@ -28,13 +28,13 @@ Surat Disposisi
                     <div class="card-header">
                         List Surat Disposisi
                         <div>
-                            <a class="btn btn-sm btn-primary" href="{{ route('disposisi.create') }}">
-                                <i data-feather="printer"></i> &nbsp;
-                                Tambah Surat Disposisi
+                            <a class="btn btn-sm btn-warning" href="{{ route('disposisi.create') }}">
+                                <i data-feather="plus-square"></i> &nbsp;
+                                Tambah Surat
                             </a>
                             <a class="btn btn-sm btn-success" href="{{ route('print-surat-disposisi') }}" target="_blank">
                                 <i data-feather="printer"></i> &nbsp;
-                                Cetak Laporan Disposisi
+                                Cetak Laporan
                             </a>
                         </div>
 
@@ -58,23 +58,23 @@ Surat Disposisi
                         </div>
                         @endif
                         {{-- List Data --}}
-                        <table class="table table-striped table-hover table-sm table-responsive" id="crudTable">
-                            <thead>
-                                <tr>
-                                    <th width="10">No.</th>
-                                    <th>No.Surat</th>
-                                    <th>Lampiran</th>
-                                    <th>Status</th>
-                                    <th>tgl_selesai</th>
-                                    <th>Penerima Disposisi</th>
-                                    <th>Kepada</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
+                        <div class="table table-responsive">
+                            <table class="table table-striped table-hover table-sm table-responsive" id="crudTable">
+                                <thead>
+                                    <tr>
+                                        <th width="10">No.</th>
+                                        <th>No.Surat</th>
+                                        <th>Lampiran</th>
+                                        <th>Status</th>
+                                        <th>tgl_selesai</th>
+                                        <th>Disposisi</th>
+                                        <th>Kepada</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -114,8 +114,8 @@ Surat Disposisi
                 name: 'tgl_selesai'
             },
             {
-                data: 'penerima_disposisi',
-                name: 'penerima_disposisi'
+                data: 'letter.disposisi',
+                name: 'letter.disposisi'
             },
             {
                 data: 'kepada',

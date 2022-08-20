@@ -46,16 +46,15 @@ class LetterController extends Controller
             'letter_type' => 'required',
         ]);
 
+        if ($request->input('disposisi')) {
+            $validatedData['disposisi'] = implode(',', $request->disposisi);
+        }
         if($request->file('letter_file')){
             $validatedData['letter_file'] = $request->file('letter_file')->store('assets/letter-file');
         }
-
         if ($validatedData['letter_type'] == 'Surat Masuk') {
             $redirect = 'surat-masuk';
-        } else {
-            $redirect = 'surat-keluar';
         }
-
         Letter::create($validatedData);
 
         return redirect()
@@ -152,6 +151,7 @@ class LetterController extends Controller
             'departments' => $departments,
             'senders' => $senders,
             'item' => $item,
+            'disposisi' => explode(',', $item->disposisi),
         ]);
     }
 
@@ -182,11 +182,11 @@ class LetterController extends Controller
         if($request->file('letter_file')){
             $validatedData['letter_file'] = $request->file('letter_file')->store('assets/letter-file');
         }
-
+        if ($request->input('disposisi')) {
+            $validatedData['disposisi'] = implode(',', $request->disposisi);
+        }
         if ($validatedData['letter_type'] == 'Surat Masuk') {
             $redirect = 'surat-masuk';
-        } else {
-            $redirect = 'surat-keluar';
         }
 
         $item->update($validatedData);

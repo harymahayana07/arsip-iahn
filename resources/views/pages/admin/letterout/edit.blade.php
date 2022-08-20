@@ -38,7 +38,7 @@ Ubah Surat Keluar
             <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         @endif
-        <form action="{{ route('letter.update', $item->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('letterout.update', $item->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="row gx-4">

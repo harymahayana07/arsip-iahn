@@ -38,11 +38,18 @@ class DisposisiController extends Controller
             'sifat' => 'required',
             'petunjuk' => 'required',
             'catatan_rektor' => 'required',
-            'tgl_selesai' => 'required',
+            'tgl_selesai' => '',
             'tgl_aju_kembali' => '',
-            'penerima_disposisi' => 'required',
-            'kepada' => 'required',
-            'letter_file' => 'required|mimes:pdf|file'
+            'penerima_disposisi_2' => '',
+            'kepada' => '',
+            'kepada_2' => '',
+            'petunjuk_kpd_1' => '',
+            'petunjuk_kpd_2' => '',
+            'tgl_selesai_2' => '',
+            'tgl_selesai_3' => '',
+            'penerima_2' => '',
+            'penerima_3' => '',
+            'letter_file' => 'mimes:pdf|file'
         ]);
         
         if ($request->file('letter_file')) {
@@ -56,6 +63,10 @@ class DisposisiController extends Controller
         }
         if ($request->input('petunjuk')) {
             $validatedData['petunjuk'] = implode(',', $request->petunjuk);
+        }
+      
+        if ($request->input('penerima_disposisi_2')) {
+            $validatedData['penerima_disposisi_2'] = implode(',', $request->penerima_disposisi_2);
         }
 
         //   ddd($request->all());
@@ -82,8 +93,8 @@ class DisposisiController extends Controller
                         <a class="btn btn-primary btn-xs" href="' . route('disposisi.edit', $item->id) . '">
                             <i class="fas fa-edit"></i> &nbsp; Ubah
                         </a>
-                         <a class="btn btn-primary btn-xs" href="' . route('disposisi-surat', $item->id) . '" target="_blank">
-                            <i class="fas fa-edit"></i> &nbsp; Cetak
+                         <a class="btn btn-secondary btn-xs" href="' . route('disposisi-surat', $item->id) . '" target="_blank">
+                            <i class="fas fa-print"></i> &nbsp; Cetak
                         </a>
                         <form action="' . route('disposisi.destroy', $item->id) . '" method="POST" onsubmit="return confirm(' . "'Anda akan menghapus item ini dari situs anda?'" . ')">
                             ' . method_field('delete') . csrf_field() . '
@@ -107,7 +118,7 @@ class DisposisiController extends Controller
 
     public function show($id)
     {
-        $item = Disposisi::where('letter_id', $id)->with(['letter'])->findOrFail($id);
+        $item = Disposisi::with(['letter'])->findOrFail($id);
 
         return view('pages.admin.disposisi.show', [
             'item' => $item,
@@ -119,9 +130,12 @@ class DisposisiController extends Controller
 
         return view('pages.admin.disposisi.print-incoming', [
             'item' => $item,
+            'status' => explode(',', $item->status),
+            'sifat' => explode(',', $item->sifat),
+            'petunjuk' => explode(',', $item->petunjuk),
+            'disposisi' => explode(',', $item->letter->disposisi),
         ]);
     }
-   
 
     public function edit($id)
     {
@@ -135,6 +149,7 @@ class DisposisiController extends Controller
             'status' => explode(',', $item->status),
             'sifat' => explode(',', $item->sifat), 
             'petunjuk' => explode(',', $item->petunjuk),
+            'penerima_disposisi_2' => explode(',', $item->penerima_disposisi_2),
         ]);
     }
 
@@ -154,10 +169,17 @@ class DisposisiController extends Controller
             'sifat' => 'required',
             'petunjuk' => 'required',
             'catatan_rektor' => 'required',
-            'tgl_selesai' => 'required',
-            'tgl_aju_kembali' => 'required',
-            'penerima_disposisi' => 'required',
-            'kepada' => 'required',
+            'tgl_selesai' => '',
+            'tgl_aju_kembali' => '',
+            'penerima_disposisi_2' => '',
+            'kepada' => '',
+            'kepada_2' => '',
+            'petunjuk_kpd_1' => '',
+            'petunjuk_kpd_2' => '',
+            'tgl_selesai_2' => '',
+            'tgl_selesai_3' => '',
+            'penerima_2' => '',
+            'penerima_3' => '',
             'letter_file' => 'mimes:pdf|file'
         ]);
 
@@ -174,6 +196,9 @@ class DisposisiController extends Controller
         }
         if ($request->input('petunjuk')) {
             $validatedData['petunjuk'] = implode(',', $request->petunjuk);
+        }
+        if ($request->input('penerima_disposisi_2')) {
+            $validatedData['penerima_disposisi_2'] = implode(',', $request->penerima_disposisi_2);
         }
         $redirect = 'surat-disposisi';
 

@@ -17,7 +17,7 @@ Tambah Surat
                         </h1>
                     </div>
                     <div class="col-12 col-xl-auto mb-3">
-                        <a class="btn btn-sm btn-light text-primary" href="{{ route('user.index') }}">
+                        <a class="btn btn-sm btn-light text-primary" href="{{ route('surat-masuk') }}">
                             <i class="me-1" data-feather="arrow-left"></i>
                             Kembali ke Semua Disposisi
                         </a>
@@ -113,37 +113,26 @@ Tambah Surat
                                 </div>
                                 @enderror
                             </div>
-                            <!-- <div class="mb-3 row">
-                                <label for="disposisi" class="col-sm-3 col-form-label">Tujuan Disposisi</label>
-                                <div class="col-sm-9">
-                                    <input type="text" class="form-control @error('disposisi') is-invalid @enderror" value="{{ old('disposisi') }}" name="disposisi" placeholder="Tujuan Disposisi.." required>
-                                </div>
-                                @error('disposisi')
-                                <div class="invalid-feedback">
-                                    {{ $message; }}
-                                </div>
-                                @enderror
-                            </div> -->
-                            <!-- tujuan disposisi -->
                             <div class="mb-3 row">
                                 <label for="disposisi" class="col-sm-3 col-form-label">Tujuan Disposisi</label>
-                                <div class="col-sm-9">
-                                    <select name="disposisi" class="form-control" required>
-                                        <option value="">Pilih Salah Satu..</option>
-                                        <option value="WAKIL REKTOR I">WAKIL REKTOR I</option>
-                                        <option value="WAKIL REKTOR II">WAKIL REKTOR II</option>
-                                        <option value="KEPALA BIRO">KEPALA BIRO</option>
-                                        <option value="KABAG">KABAG</option>
-                                        <option value="KASUBBAG TU">KASUBBAG</option>
-                                        <option value="DIREKTUR">DIREKTUR</option>
-                                        <option value="DEKAN FAKULTAS">DEKAN FAKULTAS</option>
-                                        <option value="KETUA JURUSAN">KETUA JURUSAN</option>
-                                        <option value="KOORDINATOR PRODI">KOORDINATOR PRODI</option>
-                                        <option value="KETUA LEMBAGA">KETUA LEMBAGA</option>
-                                        <option value="KEPALA UNIT">KEPALA UNIT</option>
-                                        <option value="KEPALA LAB">KEPALA LAB</option>
-                                        <option value="-">Tidak Ada</option>
-                                    </select>
+                                <div class="col-sm-9 row" style="float: right;">
+                                    <div class="col-sm-4">
+                                        <input type="checkbox" value="Wakil Rektor I" name="disposisi[]"> Wakil Rektor I <br>
+                                        <input type="checkbox" value="Kepala Biro" name="disposisi[]"> Kepala Biro <br>
+                                        <input type="checkbox" value="Kasubbag" name="disposisi[]"> Kasubbag <br>
+                                        <input type="checkbox" value="Dekan Fakultas" name="disposisi[]"> Dekan Fakultas <br>
+                                        <input type="checkbox" value="Koordinator Prodi" name="disposisi[]"> Koordinator Prodi <br>
+                                        <input type="checkbox" value="Kepala Unit" name="disposisi[]"> Kepala Unit <br>
+                                        <input type="checkbox" value="-" name="disposisi[]"> -
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <input type="checkbox" value="Wakil Rektor II" name="disposisi[]"> Wakil Rektor II <br>
+                                        <input type="checkbox" value="Kabag" name="disposisi[]"> Kabag <br>
+                                        <input type="checkbox" value="Direktur" name="disposisi[]"> Direktur <br>
+                                        <input type="checkbox" value="Ketua Jurusan" name="disposisi[]"> Ketua Jurusan <br>
+                                        <input type="checkbox" value="Ketua Lembaga" name="disposisi[]"> Ketua Lembaga <br>
+                                        <input type="checkbox" value="Kepala Lab" name="disposisi[]"> Kepala Lab <br>
+                                    </div>
                                 </div>
                                 @error('disposisi')
                                 <div class="invalid-feedback">
@@ -151,12 +140,12 @@ Tambah Surat
                                 </div>
                                 @enderror
                             </div>
-                            <!--  -->
+                          
                             <div class="mb-3 row">
                                 <label for="department_id" class="col-sm-3 col-form-label">Departemen</label>
                                 <div class="col-sm-9">
                                     <select name="department_id" class="form-control" required>
-                                        <option value="">Pilih Departemen Pengirim..</option>
+                                        <option value="">Pilih Departemen...</option>
                                         @foreach ($departments as $department)
                                         <option value="{{ $department->id }}" {{ (old('department_id') == $department->id)? 'selected':''; }}>{{ $department->name }}</option>
                                         @endforeach
@@ -172,7 +161,7 @@ Tambah Surat
                                 <label for="sender_id" class="col-sm-3 col-form-label">Pengirim</label>
                                 <div class="col-sm-9">
                                     <select name="sender_id" class="form-control" required>
-                                        <option value="">Pilih Personal Pengirim..</option>
+                                        <option value="">Pilih Pengirim..</option>
                                         @foreach ($senders as $sender)
                                         <option value="{{ $sender->id }}" {{ (old('sender_id') == $sender->id)? 'selected':''; }}>{{ $sender->name }}</option>
                                         @endforeach
@@ -188,7 +177,7 @@ Tambah Surat
                                 <label for="letter_file" class="col-sm-3 col-form-label">File</label>
                                 <div class="col-sm-9">
                                     <input type="file" class="form-control @error('letter_file') is-invalid @enderror" value="{{ old('letter_file') }}" name="letter_file" required>
-                                    <div id="letter_file" class="form-text">Ekstensi .pdf</div>
+                                    <div id="letter_file" class="form-text">Ekstensi .pdf | <span style="color: blue;"> * Harus diisi</span></div>
                                 </div>
                                 @error('letter_file')
                                 <div class="invalid-feedback">

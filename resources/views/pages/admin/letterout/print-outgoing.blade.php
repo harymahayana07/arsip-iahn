@@ -18,14 +18,46 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h4 class="text-center">Laporan Surat Keluar</h4>
-                    <table class="table">
+                    <table border="1" width="100%">
+                        <tbody>
+                            <tr>
+                                <td valign="top">
+                                    <div align="center">
+                                        <span style="font-size: x-small;">&emsp;&emsp;&emsp;&emsp;<img src="/admin/assets/img/iahn.jpeg" style="max-width: 7rem;" alt="Gambar iahn"></span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <table border="0" cellpadding="1" style="width: 500px;text-align: center;">
+                                        <tbody>
+                                            <tr>
+                                                <td width="100%"><span style="font-size: x-small;">
+                                                        <h6>KEMENTERIAN AGAMA REPUBLIK INDONESIA <br>INSTITUT AGAMA HINDU GDE PUDJA MATARAM</h6>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td width="100%"><span style="font-size: x-small;">
+                                                        <center>
+                                                            <pre>Jalan Pancaka No. 7 B Mataram 83126 <br> Telepon (0370) 628382; Faksimili (0370) 631725,<br> www.iahn-gdepudja.ac.id, email : info@iahn-gdepudja.ac.id</pre>
+                                                        </center>
+                                                    </span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div>
+                        <h6>Laporan Surat Keluar</h6>
+                    </div>
+                    <table class="table table-sm table-striped table-bordered" width="100%">
                         <thead>
-                            <th>No.</th>
-                            <th>No. Surat</th>
-                            <th>Perihal</th>
-                            <th>Tujuan</th>
-                            <th style="text-align: center">Tanggal</th>
+                            <th style="text-align: center;font-size: small;">No.</th>
+                            <th style="text-align: center;font-size: small;">No. Surat</th>
+                            <th style="text-align: center;font-size: small;">Perihal</th>
+                            <th style="text-align: center;font-size: small;">Tujuan</th>
+                            <th style="text-align: center;font-size: small;">Tanggal</th>
                         </thead>
                         <tbody>
                             @php
@@ -33,11 +65,11 @@
                             @endphp
                             @foreach ($item as $letterout)
                             <tr>
-                                <td>{{ $no++; }}</td>
-                                <td>{{ $letterout->letter_no }}</td>
-                                <td>{{ $letterout->regarding }}</td>
-                                <td>{{ $letterout->purpose }}</td>
-                                <td style="text-align: center">{{ date('d-m-Y', strtotime($letterout->letter_date)) }}</td>
+                                <td style="text-align: center;font-size: small;">{{ $no++; }}</td>
+                                <td style="text-align: center;font-size: small;">{{ $letterout->letter_no }}</td>
+                                <td style="text-align: center;font-size: small;">{{ $letterout->regarding }}</td>
+                                <td style="text-align: center;font-size: small;">{{ $letterout->purpose }}</td>
+                                <td style="text-align: center;font-size: small;">{{ Carbon\Carbon::parse($letterout->letter_date)->translatedFormat('l, d F Y') }}</td>
                             </tr>
                             @endforeach
                         </tbody>

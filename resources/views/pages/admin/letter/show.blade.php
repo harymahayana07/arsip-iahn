@@ -46,11 +46,11 @@ Detail Surat
                                     </tr>
                                     <tr>
                                         <th>Tanggal Surat</th>
-                                        <td>{{ $item->letter_date }}</td>
+                                        <td>{{ Carbon\Carbon::parse($item->letter_date)->translatedFormat('l, d F Y') }}</td>
                                     </tr>
                                     <tr>
                                         <th>Tanggal Diterima</th>
-                                        <td>{{ $item->date_received }}</td>
+                                        <td>{{ Carbon\Carbon::parse($item->date_received)->translatedFormat('l, d F Y') }}</td>
                                     </tr>
                                     <tr>
                                         <th>No.Agenda</th>

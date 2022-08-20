@@ -3,9 +3,7 @@
         <div class="row">
             <div class="col-md-6 small">Copyright &copy; Institut Agama Hindu Gde Pudja Mataram {{ date('Y') }}</div>
             <div class="col-md-6 text-md-end small">
-                <a href="#!">Privacy Policy</a>
-                &middot;
-                <a href="#!">Terms &amp; Conditions</a>
+                <a href="#!">Version 1.0</a>
             </div>
         </div>
     </div>

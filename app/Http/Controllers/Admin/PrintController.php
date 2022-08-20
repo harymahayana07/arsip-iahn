@@ -28,16 +28,13 @@ class PrintController extends Controller
             'item' => $item
         ]);
     }
-    public function disposisiprintall($id)
+    public function disposisiprintall()
     {
-        $letter = Letter::all();
+        $item = Disposisi::with(['letter'])->latest()->get();
 
-        $item = Disposisi::where('letter_id', $id)->latest()->get();
-
-        return view('pages.admin.disposisi.print-incoming', [
-            'item' => $item,
-            'letter' => $letter,
+        return view('pages.admin.disposisi.print-laporan', [
+            'item' => $item
         ]);
-        
     }
+   
 }
