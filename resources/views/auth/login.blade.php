@@ -6,13 +6,14 @@
         <div class="row justify-content-center">
             <div class="col-lg-5">
                 <!-- Basic login form-->
-                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card border-0 rounded-lg mt-5" id="shadow-login">
                     <!-- <div class="card-header justify-content-center">
 
                     </div> -->
+                    <br>
                     <h3 class="fw-light text-center mt-3"><b>LOGIN E-ARSIP SURAT</b></h3>
                     <h3 class="fw-light text-center mb-3"><b>IAHN GDE PUDJA MATARAM</b></h3>
-                    <div class="col-xl-4 col-xxl-12 text-center"><img class="img-fluid" src="/admin/assets/img/iahn.jpeg" style="max-width: 12rem" /></div>
+                    <div class="col-xl-4 col-xxl-12 text-center"><img class="img-fluid" src="/admin/assets/img/iahn.jpeg" style="max-width: 11rem" /></div>
                     <div class="card-body">
                         @if (session()->has('success'))
                         <div class="alert alert-success alert-dismissible fade show" role="alert">

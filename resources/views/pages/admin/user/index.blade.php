@@ -6,26 +6,20 @@
 
 @section('container')
     <main>
-        <header class="page-header page-header-dark bg-gradient-primary-to-secondary pb-10">
+        <header class="page-header page-header-dark pb-10" style="background-color: yellow;">
             <div class="container-xl px-4">
                 <div class="page-header-content pt-4">
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto mt-4">
-                            <h1 class="page-header-title">
-                                <div class="page-header-icon">
+                            <h1 class="page-header-title text-dark">
+                                <div class="page-header-icon text-dark">
                                     <i data-feather="file-text"></i>
                                 </div>
                                 Pengguna
                             </h1>
-                            <div class="page-header-subtitle">List Pengguna</div>
+                            <div class="page-header-subtitle text-dark">List Data User</div>
                         </div>
                     </div>
-                    <nav class="mt-4 rounded" aria-label="breadcrumb">
-                        <ol class="breadcrumb px-3 py-2 rounded mb-0">
-                            <li class="breadcrumb-item"><a href="{{ route('admin-dashboard') }}">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Pengguna</li>
-                        </ol>
-                    </nav>
                 </div>
             </div>
         </header>
@@ -35,7 +29,7 @@
                 <div class="col-lg-12">
                     <div class="card card-header-actions mb-4">
                         <div class="card-header">
-                            List Pengguna
+                            List :
                             <a class="btn btn-sm btn-primary" href="{{ route('user.create') }}">
                                 Tambah Pengguna Baru
                             </a>

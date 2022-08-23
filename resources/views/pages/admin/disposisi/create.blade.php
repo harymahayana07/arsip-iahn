@@ -220,7 +220,7 @@ Tambah Surat Disposisi
             <div class="row gx-4">
                 <div class="col-lg-9">
                     <div class="card mb-4">
-                        <div class="card-header">Form Pengajuan Kembali Disposisi<span style="color: green;"> * Kosongkan Jika Tidak diisi.</span></div>
+                        <div class="card-header">Form Pengajuan Kembali Disposisi<span style="color: green;">* Harus diisi</span></div>
                         <div class="card-body">
                             <div class="mb-3 row">
                                 <label for="tgl_aju_kembali" class="col-sm-3 col-form-label">Tanggal Diajukan kembali</label>

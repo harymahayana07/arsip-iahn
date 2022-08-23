@@ -75,9 +75,8 @@
                                 <!-- Form Group (Password)-->
                                 <div class="mb-3">
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="password">Password</label>
-                                        <input class="form-control @error('password') is-invalid @enderror" name="password" type="password"/>
-                                        <small class="form-text text-muted">Kosongkan jika tidak ingin mengganti password</small>
+                                       
+                                        <input class="form-control @error('password') is-invalid @enderror" name="password" type="hidden"/>
                                         @error('password')
                                             <div class="invalid-feedback">
                                                 {{ $message; }}

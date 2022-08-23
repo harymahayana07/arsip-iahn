@@ -26,10 +26,8 @@ use PhpParser\Node\Expr\Print_;
 |
 */
 
-Route::get('/', function(){
-    return view('welcome');
-});
-Route::get('/logins', [LoginController::class, 'index']);
+
+Route::get('/', [LoginController::class, 'index']);
 
 // Authentication
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');

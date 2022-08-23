@@ -26,7 +26,7 @@ Surat Disposisi
             <div class="col-lg-12">
                 <div class="card card-header-actions mb-4">
                     <div class="card-header">
-                        List Surat Disposisi
+                        Data :
                         <div>
                             <a class="btn btn-sm btn-warning" href="{{ route('disposisi.create') }}">
                                 <i data-feather="plus-square"></i> &nbsp;

@@ -48,7 +48,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="{{ route('setting.index') }}">
                     <div class="dropdown-item-icon"><i data-feather="settings"></i></div>
-                    Account
+                    Account Profile
                 </a>
                 <form action="/logout" method="post">
                     @csrf

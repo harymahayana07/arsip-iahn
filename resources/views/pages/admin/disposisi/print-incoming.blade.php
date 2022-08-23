@@ -235,12 +235,12 @@
             <tr>
                 <td colspan="2">
                     <div>
-                        <span style="font-size: x-small;"> Tanggal Penyelesaian : {{ $item->tgl_selesai }}</span>
+                        <span style="font-size: x-small;"> Tanggal Penyelesaian : {{ Carbon\Carbon::parse($item->tgl_selesai)->translatedFormat('l, d F Y') }}</span>
                     </div>
                 </td>
                 <td valign="top">
                     <div>
-                        <span style="font-size: x-small;"> Diajukan kembali tanggal : {{ $item->tgl_aju_kembali }}</span>
+                        <span style="font-size: x-small;"> Diajukan kembali tanggal : {{ Carbon\Carbon::parse($item->tgl_aju_kembali)->translatedFormat('l, d F Y') }}</span>
                     </div>
                 </td>
             </tr>
@@ -259,36 +259,36 @@
             <tr>
                 <td colspan="2" style="height: 80px;" valign="top">
                     <div>
-                        <span style="font-size: x-small;"> Kepada : {{ $item->kepada }} <br>Petunjuk : {{ $item->petunjuk }}</span>
+                        <span style="font-size: x-small;"> Kepada : {{ $item->kepada }} <br>Petunjuk : {{ $item->petunjuk_kpd_1 }}</span>
                     </div>
                 </td>
                 <td valign="top">
                     <div>
-                        <span style="font-size: x-small;"> Kepada : belum-ada <br>Petunjuk : belum ada</span>
+                        <span style="font-size: x-small;"> Kepada : {{ $item->kepada_2 }} <br>Petunjuk : {{ $item->petunjuk_kpd_2 }}</span>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
                     <div>
-                        <span style="font-size: x-small;"> Tanggal Penyelesaian : {{ $item->tgl_selesai }}</span>
+                        <span style="font-size: x-small;"> Tanggal Penyelesaian : {{ Carbon\Carbon::parse($item->tgl_selesai_2)->translatedFormat('l, d F Y') }}</span>
                     </div>
                 </td>
                 <td>
                     <div>
-                        <span style="font-size: x-small;"> Diajukan kembali tanggal : {{ $item->tgl_aju_kembali }}</span>
+                        <span style="font-size: x-small;"> Diajukan kembali tanggal : {{ Carbon\Carbon::parse($item->tgl_selesai_3)->translatedFormat('l, d F Y') }}</span>
                     </div>
                 </td>
             </tr>
             <tr>
                 <td colspan="2">
                     <div>
-                        <span style="font-size: x-small;"> Penerima : {{ $item->penerima_disposisi }}</span>
+                        <span style="font-size: x-small;"> Penerima : {{ $item->penerima_2 }}</span>
                     </div>
                 </td>
                 <td valign="top">
                     <div>
-                        <span style="font-size: x-small;"> Penerima : {{ $item->penerima_disposisi }}</span>
+                        <span style="font-size: x-small;"> Penerima : {{ $item->penerima_3 }}</span>
                     </div>
                 </td>
             </tr>
